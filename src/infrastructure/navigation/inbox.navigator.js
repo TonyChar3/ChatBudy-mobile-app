@@ -7,15 +7,14 @@ import { ChatRoomScreen } from "../../features/inbox/screen/chat-room.screen";
 const Stack = createStackNavigator();
 
 export const InboxNavigator = () => {
-
-    return (
-        <Stack.Navigator
-            screenOptions={{
-                headerShown: false,
-            }}
-        >
-            <Stack.Screen name="Inbox" component={InboxScreen} />
-            <Stack.Screen name="ChatRoom" component={ChatRoomScreen} />
-        </Stack.Navigator>
-    );
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="Inbox" component={InboxScreen} />
+      <Stack.Screen name="ChatRoom" component={ChatRoomScreen} />
+    </Stack.Navigator>
+  );
 };

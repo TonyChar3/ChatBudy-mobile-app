@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components/native";
-import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
+import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 
 import { theme } from "./src/infrastructure/theme/index";
 import { AuthContextProvider } from "./src/services/authentication/authentication.context";

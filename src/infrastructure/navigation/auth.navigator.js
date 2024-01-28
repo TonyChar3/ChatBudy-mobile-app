@@ -8,11 +8,14 @@ import { SubscriptionPickScreen } from "../../features/authentication/screen/sub
 const Stack = createStackNavigator();
 
 export const AuthNavigator = () => {
-    return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="Login" component={LoginScreen} />
-            <Stack.Screen name="Register" component={RegisterScreen} />
-            <Stack.Screen name="Subscription-Pick" component={SubscriptionPickScreen} />
-        </Stack.Navigator>
-    );
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Register" component={RegisterScreen} />
+      <Stack.Screen
+        name="Subscription-Pick"
+        component={SubscriptionPickScreen}
+      />
+    </Stack.Navigator>
+  );
 };
