@@ -6,21 +6,20 @@ import { SafeArea } from "../../../components/utility/safe-area.component";
 
 import { AuthContext } from "../../../services/authentication/authentication.context";
 
-import { 
-  Bubble1, 
-  Bubble2, 
-  Bubble3, 
-  Bubble4, 
-  Bubble5, 
-  LoginFormWrapper, 
+import {
+  Bubble1,
+  Bubble2,
+  Bubble3,
+  Bubble4,
+  Bubble5,
+  LoginFormWrapper,
   LoginFormContainer,
-  TitleContainer, 
+  TitleContainer,
   LoginInputContainer,
-  WelcomeTitle,
   ForgotPasswordLinkContainer,
   LoginButtons,
-  RegisterLinkContainer
-} from "../components/login-screen.style";
+  RegisterLinkContainer,
+} from "../components/authentication.style";
 
 export const LoginScreen = ({ navigation }) => {
   const { setUser } = useContext(AuthContext);
@@ -36,12 +35,8 @@ export const LoginScreen = ({ navigation }) => {
       <LoginFormWrapper>
         <LoginFormContainer>
           <TitleContainer>
-            <WelcomeTitle style={styles.welcomeTitle}>
-              Welcome!
-            </WelcomeTitle>
-            <WelcomeTitle style={styles.welcomeSubtitle}>
-              Connect to continue
-            </WelcomeTitle>
+            <Text style={styles.welcomeTitle}>Welcome!</Text>
+            <Text style={styles.welcomeSubtitle}>Connect to continue</Text>
           </TitleContainer>
           <LoginInputContainer>
             <TextInput
@@ -77,7 +72,10 @@ export const LoginScreen = ({ navigation }) => {
             />
           </LoginInputContainer>
           <ForgotPasswordLinkContainer>
-            <Text onPress={() => navigation.navigate("Forgot-Password")} style={styles.forgotPasswordText}>
+            <Text
+              onPress={() => navigation.navigate("Forgot-Password")}
+              style={styles.forgotPasswordText}
+            >
               Forgot password ?
             </Text>
           </ForgotPasswordLinkContainer>
@@ -85,12 +83,10 @@ export const LoginScreen = ({ navigation }) => {
             <Text style={styles.connectText}>Connect</Text>
           </LoginButtons>
           <RegisterLinkContainer>
-            <Text style={styles.noAccountText}>
-              No account yet ?
-            </Text>
-            <Text 
-            onPress={() => navigation.navigate("Register")} 
-            style={styles.registerText}
+            <Text style={styles.noAccountText}>No account yet ?</Text>
+            <Text
+              onPress={() => navigation.navigate("Register")}
+              style={styles.registerText}
             >
               Register here
             </Text>
@@ -105,33 +101,39 @@ export const LoginScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  welcomeTitle: { 
-    fontSize: 40, 
-    color: '#A881D4', 
-    fontWeight: 700 
+  welcomeTitle: {
+    fontFamily: "FiraSans_700Bold",
+    fontSize: 40,
+    color: "#A881D4",
+    fontWeight: 700,
   },
-  welcomeSubtitle: { 
-    fontSize: 13, 
-    color: '#A881D4', 
-    fontWeight: 400 
+  welcomeSubtitle: {
+    fontFamily: "FiraSans_700Bold",
+    fontSize: 13,
+    color: "#A881D4",
+    fontWeight: 400,
   },
-  forgotPasswordText: { 
-    fontSize: 13, 
-    color: '#A881D4', 
-    fontWeight: 400 
+  forgotPasswordText: {
+    fontFamily: "FiraSans_700Bold",
+    fontSize: 13,
+    color: "#A881D4",
+    fontWeight: 400,
   },
-  noAccountText: { 
-    fontSize: 13, 
-    paddingRight: 5, 
-    fontWeight: 600 
+  noAccountText: {
+    fontFamily: "FiraSans_700Bold",
+    fontSize: 13,
+    paddingRight: 5,
+    fontWeight: 600,
   },
-  registerText: { 
-    textDecorationLine: 'underline', 
-    color: '#A881D4' 
+  registerText: {
+    fontFamily: "FiraSans_700Bold",
+    textDecorationLine: "underline",
+    color: "#A881D4",
   },
   connectText: {
-    color: '#FFFFFF',
+    fontFamily: "FiraSans_700Bold",
+    color: "#FFFFFF",
     fontSize: 17,
-    fontWeight: 600
-  }
-})
+    fontWeight: 600,
+  },
+});
