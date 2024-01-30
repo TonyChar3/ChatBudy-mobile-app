@@ -7,15 +7,19 @@ import { AuthContextProvider } from "./src/services/authentication/authenticatio
 
 import { Navigation } from "./src/infrastructure/navigation/";
 
-import { useFonts as useFira, FiraSans_400Regular, FiraSans_700Bold} from "@expo-google-fonts/fira-sans";
+import {
+  useFonts as useFira,
+  FiraSans_400Regular,
+  FiraSans_700Bold,
+} from "@expo-google-fonts/fira-sans";
 
 export default function App() {
   const [firaLoaded] = useFira({
     FiraSans_400Regular,
-    FiraSans_700Bold
+    FiraSans_700Bold,
   });
 
-  if(!firaLoaded){
+  if (!firaLoaded) {
     return null;
   }
 

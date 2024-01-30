@@ -7,11 +7,6 @@ import { SafeArea } from "../../../components/utility/safe-area.component";
 import { AuthContext } from "../../../services/authentication/authentication.context";
 
 import {
-  Bubble1,
-  Bubble2,
-  Bubble3,
-  Bubble4,
-  Bubble5,
   LoginFormWrapper,
   LoginFormContainer,
   TitleContainer,
@@ -20,6 +15,12 @@ import {
   LoginButtons,
   RegisterLinkContainer,
 } from "../components/authentication.style";
+
+// Bubble1,
+// Bubble2,
+// Bubble3,
+// Bubble4,
+// Bubble5,
 
 export const LoginScreen = ({ navigation }) => {
   const { setUser } = useContext(AuthContext);
@@ -30,8 +31,8 @@ export const LoginScreen = ({ navigation }) => {
 
   return (
     <SafeArea>
-      <Bubble1 />
-      <Bubble2 />
+      {/* <Bubble1 />
+      <Bubble2 /> */}
       <LoginFormWrapper>
         <LoginFormContainer>
           <TitleContainer>
@@ -93,9 +94,9 @@ export const LoginScreen = ({ navigation }) => {
           </RegisterLinkContainer>
         </LoginFormContainer>
       </LoginFormWrapper>
-      <Bubble3 />
+      {/* <Bubble3 />
       <Bubble4 />
-      <Bubble5 />
+      <Bubble5 /> */}
     </SafeArea>
   );
 };
@@ -105,25 +106,21 @@ const styles = StyleSheet.create({
     fontFamily: "FiraSans_700Bold",
     fontSize: 40,
     color: "#A881D4",
-    fontWeight: 700,
   },
   welcomeSubtitle: {
     fontFamily: "FiraSans_700Bold",
     fontSize: 13,
     color: "#A881D4",
-    fontWeight: 400,
   },
   forgotPasswordText: {
     fontFamily: "FiraSans_700Bold",
     fontSize: 13,
     color: "#A881D4",
-    fontWeight: 400,
   },
   noAccountText: {
     fontFamily: "FiraSans_700Bold",
     fontSize: 13,
     paddingRight: 5,
-    fontWeight: 600,
   },
   registerText: {
     fontFamily: "FiraSans_700Bold",
@@ -134,6 +131,5 @@ const styles = StyleSheet.create({
     fontFamily: "FiraSans_700Bold",
     color: "#FFFFFF",
     fontSize: 17,
-    fontWeight: 600,
   },
 });

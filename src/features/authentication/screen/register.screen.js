@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Text, StyleSheet, View } from "react-native";
+import { Text, StyleSheet } from "react-native";
 import { TextInput, ProgressBar } from "react-native-paper";
 
 import { SafeArea } from "../../../components/utility/safe-area.component";
@@ -21,12 +21,13 @@ import {
   RegisterTitleWrapper,
   RegisterTitleContainer,
   RegisterReturnLinkContainer,
-  RegisterBubble1,
-  RegisterBubble2,
-  RegisterBubble3,
-  RegisterBubble4,
-  RegisterBubble5,
 } from "../components/authentication.style";
+
+// RegisterBubble1,
+// RegisterBubble2,
+// RegisterBubble3,
+// RegisterBubble4,
+// RegisterBubble5,
 
 export const RegisterScreen = ({ navigation }) => {
   const { setUser } = useContext(AuthContext);
@@ -51,8 +52,8 @@ export const RegisterScreen = ({ navigation }) => {
 
   return (
     <SafeArea>
-      <RegisterBubble1 />
-      <RegisterBubble2 />
+      {/* <RegisterBubble1 />
+      <RegisterBubble2 /> */}
       <RegisterWrapper>
         <RegisterFormContainer>
           <NameEmailInputContainer>
@@ -114,7 +115,7 @@ export const RegisterScreen = ({ navigation }) => {
                 color={progress_bar_message.bg_color}
                 style={
                   show_progress_bar
-                    ? { width: 300, marginTop: 5, borderRadius: 50 }
+                    ? { width: 300, marginTop: 5 }
                     : { height: 0 }
                 }
               />
@@ -156,9 +157,9 @@ export const RegisterScreen = ({ navigation }) => {
           </PasswordUrlInputContainer>
         </RegisterFormContainer>
       </RegisterWrapper>
-      <RegisterBubble3 />
+      {/* <RegisterBubble3 />
       <RegisterBubble4 />
-      <RegisterBubble5 />
+      <RegisterBubble5 /> */}
     </SafeArea>
   );
 };

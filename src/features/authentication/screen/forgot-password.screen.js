@@ -13,18 +13,19 @@ import {
   ResetAdvertContainer,
   ForgotPasswordButtonContainer,
   ForgotPasswordResetButton,
-  ForgotPasswordBubble1,
-  ForgotPasswordBubble2,
-  ForgotPasswordBubble3,
   ForgotPasswordLogo,
 } from "../components/authentication.style";
+
+// ForgotPasswordBubble1,
+// ForgotPasswordBubble2,
+// ForgotPasswordBubble3,
 
 export const ForgotPasswordScreen = ({ navigation }) => {
   const [user_email, setUserEmail] = useState("");
 
   return (
     <SafeArea>
-      <ForgotPasswordBubble3 />
+      {/*<ForgotPasswordBubble3 />*/}
       <ForgotPasswordLogo>
         <Image
           source={{
@@ -51,7 +52,7 @@ export const ForgotPasswordScreen = ({ navigation }) => {
           textColor="#000000"
           value={user_email}
           onChangeText={(val) => setUserEmail(val)}
-          style={{ backgroundColor: "#FFFFFF", width: "90%", margin: 6 }}
+          style={{ backgroundColor: "#FFFFFF", width: 100, margin: 6 }}
         />
         <ForgotPasswordButtonContainer>
           <ForgotPasswordResetButton
@@ -67,8 +68,8 @@ export const ForgotPasswordScreen = ({ navigation }) => {
           </Text>
         </ForgotPasswordButtonContainer>
       </ForgotPasswordContainer>
-      <ForgotPasswordBubble1 />
-      <ForgotPasswordBubble2 />
+      {/* <ForgotPasswordBubble1 /> */}
+      {/* <ForgotPasswordBubble2 /> */}
     </SafeArea>
   );
 };
