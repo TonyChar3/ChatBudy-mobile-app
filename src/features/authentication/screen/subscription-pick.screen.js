@@ -13,13 +13,12 @@ import {
   PlanButton,
   PlanContinueButton,
   PlanButtonCircle,
+  PlanPickerBubble1,
+  PlanPickerBubble2,
+  PlanPickerBubble3,
+  PlanPickerBubble4,
+  PlanPickerBubble5,
 } from "../components/authentication.style";
-
-// PlanPickerBubble1,
-// PlanPickerBubble2,
-// PlanPickerBubble3,
-// PlanPickerBubble4,
-// PlanPickerBubble5,
 
 export const SubscriptionPickScreen = () => {
   const { setUser } = useContext(AuthContext);
@@ -28,8 +27,8 @@ export const SubscriptionPickScreen = () => {
 
   return (
     <SafeArea>
-      {/* <PlanPickerBubble1 />
-      <PlanPickerBubble2 /> */}
+      <PlanPickerBubble1 />
+      <PlanPickerBubble2 />
       <PlanPickingWrapper>
         <PlanPickingContainer>
           <PlanPickingTitleContainer>
@@ -113,9 +112,9 @@ export const SubscriptionPickScreen = () => {
           </PlanContinueButton>
         </PlanPickingContainer>
       </PlanPickingWrapper>
-      {/* <PlanPickerBubble3 />
+      <PlanPickerBubble3 />
       <PlanPickerBubble4 />
-      <PlanPickerBubble5 /> */}
+      <PlanPickerBubble5 />
     </SafeArea>
   );
 };
@@ -128,13 +127,13 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontFamily: "FiraSans_700Bold",
-    fontSize: 13,
+    fontSize: 16,
     color: "#A881D4",
-    marginTop: 4,
+    marginTop: 6,
   },
   buttonText: {
     fontFamily: "FiraSans_700Bold",
-    fontSize: 15,
+    fontSize: 18,
     color: "#A881D4",
     textAlign: "center",
   },

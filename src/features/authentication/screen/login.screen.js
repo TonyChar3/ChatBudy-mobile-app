@@ -14,13 +14,12 @@ import {
   ForgotPasswordLinkContainer,
   LoginButtons,
   RegisterLinkContainer,
+  LoginBubble1,
+  LoginBubble2,
+  LoginBubble3,
+  LoginBubble4,
+  LoginBubble5,
 } from "../components/authentication.style";
-
-// Bubble1,
-// Bubble2,
-// Bubble3,
-// Bubble4,
-// Bubble5,
 
 export const LoginScreen = ({ navigation }) => {
   const { setUser } = useContext(AuthContext);
@@ -31,8 +30,8 @@ export const LoginScreen = ({ navigation }) => {
 
   return (
     <SafeArea>
-      {/* <Bubble1 />
-      <Bubble2 /> */}
+      <LoginBubble1 />
+      <LoginBubble2 />
       <LoginFormWrapper>
         <LoginFormContainer>
           <TitleContainer>
@@ -94,9 +93,9 @@ export const LoginScreen = ({ navigation }) => {
           </RegisterLinkContainer>
         </LoginFormContainer>
       </LoginFormWrapper>
-      {/* <Bubble3 />
-      <Bubble4 />
-      <Bubble5 /> */}
+      <LoginBubble3 />
+      <LoginBubble4 />
+      <LoginBubble5 />
     </SafeArea>
   );
 };
@@ -114,7 +113,7 @@ const styles = StyleSheet.create({
   },
   forgotPasswordText: {
     fontFamily: "FiraSans_700Bold",
-    fontSize: 13,
+    fontSize: 14,
     color: "#A881D4",
   },
   noAccountText: {
@@ -130,6 +129,6 @@ const styles = StyleSheet.create({
   connectText: {
     fontFamily: "FiraSans_700Bold",
     color: "#FFFFFF",
-    fontSize: 17,
+    fontSize: 19,
   },
 });

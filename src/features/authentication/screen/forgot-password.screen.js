@@ -14,24 +14,23 @@ import {
   ForgotPasswordButtonContainer,
   ForgotPasswordResetButton,
   ForgotPasswordLogo,
+  ForgotPasswordBubble1,
+  ForgotPasswordBubble2,
+  ForgotPasswordBubble3,
 } from "../components/authentication.style";
-
-// ForgotPasswordBubble1,
-// ForgotPasswordBubble2,
-// ForgotPasswordBubble3,
 
 export const ForgotPasswordScreen = ({ navigation }) => {
   const [user_email, setUserEmail] = useState("");
 
   return (
     <SafeArea>
-      {/*<ForgotPasswordBubble3 />*/}
+      <ForgotPasswordBubble3 />
       <ForgotPasswordLogo>
         <Image
           source={{
             uri: "https://ik.imagekit.io/bqofr3ncj/tr:w-150/ChatBudy.io_2024-01-10_15_24/Increase_Your_Sales_5_wv9ifc.png?updatedAt=1704919570304",
           }}
-          style={{ width: 150, height: 150 }}
+          style={styles.passwordLogo}
         />
       </ForgotPasswordLogo>
       <ForgotPasswordContainer>
@@ -52,7 +51,7 @@ export const ForgotPasswordScreen = ({ navigation }) => {
           textColor="#000000"
           value={user_email}
           onChangeText={(val) => setUserEmail(val)}
-          style={{ backgroundColor: "#FFFFFF", width: 100, margin: 6 }}
+          style={styles.emailInput}
         />
         <ForgotPasswordButtonContainer>
           <ForgotPasswordResetButton
@@ -68,8 +67,8 @@ export const ForgotPasswordScreen = ({ navigation }) => {
           </Text>
         </ForgotPasswordButtonContainer>
       </ForgotPasswordContainer>
-      {/* <ForgotPasswordBubble1 /> */}
-      {/* <ForgotPasswordBubble2 /> */}
+      <ForgotPasswordBubble1 />
+      <ForgotPasswordBubble2 />
     </SafeArea>
   );
 };
@@ -89,12 +88,21 @@ const styles = StyleSheet.create({
   resetButtonText: {
     color: "#FFFFFF",
     fontFamily: "FiraSans_700Bold",
-    fontSize: 16,
+    fontSize: 18,
   },
   cancelButtonText: {
     fontFamily: "FiraSans_700Bold",
     fontSize: 16,
     color: "#A881D4",
     textDecorationLine: "underline",
+  },
+  emailInput: {
+    backgroundColor: "#FFFFFF",
+    width: 300,
+    margin: 6,
+  },
+  passwordLogo: {
+    width: 150,
+    height: 150,
   },
 });

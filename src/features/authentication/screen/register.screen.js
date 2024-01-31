@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Text, StyleSheet } from "react-native";
 import { TextInput, ProgressBar } from "react-native-paper";
 
@@ -7,8 +7,6 @@ import {
   calculatePasswordStrength,
   passwordStrengthSpanMessage,
 } from "../../../utils/calculations";
-
-import { AuthContext } from "../../../services/authentication/authentication.context";
 
 import {
   RegisterWrapper,
@@ -21,17 +19,14 @@ import {
   RegisterTitleWrapper,
   RegisterTitleContainer,
   RegisterReturnLinkContainer,
+  RegisterBubble1,
+  RegisterBubble2,
+  RegisterBubble3,
+  RegisterBubble4,
+  RegisterBubble5,
 } from "../components/authentication.style";
 
-// RegisterBubble1,
-// RegisterBubble2,
-// RegisterBubble3,
-// RegisterBubble4,
-// RegisterBubble5,
-
 export const RegisterScreen = ({ navigation }) => {
-  const { setUser } = useContext(AuthContext);
-
   const [user_email, setUserEmail] = useState("");
   const [business_name, setBusinessName] = useState("");
   const [website_url, setWebsiteUrl] = useState("");
@@ -52,8 +47,8 @@ export const RegisterScreen = ({ navigation }) => {
 
   return (
     <SafeArea>
-      {/* <RegisterBubble1 />
-      <RegisterBubble2 /> */}
+      <RegisterBubble1 />
+      <RegisterBubble2 />
       <RegisterWrapper>
         <RegisterFormContainer>
           <NameEmailInputContainer>
@@ -70,9 +65,9 @@ export const RegisterScreen = ({ navigation }) => {
               outlineColor="#A881D4"
               activeOutlineColor="#A881D4"
               textColor="#000000"
-              value={user_email}
+              value={business_name}
               onChangeText={(val) => setBusinessName(val)}
-              style={{ backgroundColor: "#FFFFFF" }}
+              style={styles.authInputs}
             />
             <TextInput
               label="Email"
@@ -82,7 +77,7 @@ export const RegisterScreen = ({ navigation }) => {
               textColor="#000000"
               value={user_email}
               onChangeText={(val) => setUserEmail(val)}
-              style={{ backgroundColor: "#FFFFFF" }}
+              style={styles.authInputs}
             />
           </NameEmailInputContainer>
           <PasswordUrlInputContainer>
@@ -105,19 +100,15 @@ export const RegisterScreen = ({ navigation }) => {
                   color="#000000"
                 />
               }
-              style={{ backgroundColor: "#FFFFFF" }}
+              style={styles.authInputs}
             />
             <PasswordProgressBarContainer
-              style={show_progress_bar ? { marginTop: 2 } : { height: 0 }}
+              style={show_progress_bar ? { marginTop: 8 } : { height: 0 }}
             >
               <ProgressBar
                 progress={password_strength}
                 color={progress_bar_message.bg_color}
-                style={
-                  show_progress_bar
-                    ? { width: 300, marginTop: 5 }
-                    : { height: 0 }
-                }
+                style={show_progress_bar ? { width: 280 } : { height: 0 }}
               />
               <Text
                 style={{
@@ -134,9 +125,9 @@ export const RegisterScreen = ({ navigation }) => {
               outlineColor="#A881D4"
               activeOutlineColor="#A881D4"
               textColor="#000000"
-              value={user_email}
+              value={website_url}
               onChangeText={(val) => setWebsiteUrl(val)}
-              style={{ backgroundColor: "#FFFFFF" }}
+              style={styles.authInputs}
             />
             <RegisterButtonsContainer>
               <RegisterButton
@@ -157,9 +148,9 @@ export const RegisterScreen = ({ navigation }) => {
           </PasswordUrlInputContainer>
         </RegisterFormContainer>
       </RegisterWrapper>
-      {/* <RegisterBubble3 />
+      <RegisterBubble3 />
       <RegisterBubble4 />
-      <RegisterBubble5 /> */}
+      <RegisterBubble5 />
     </SafeArea>
   );
 };
@@ -197,5 +188,9 @@ const styles = StyleSheet.create({
     fontFamily: "FiraSans_700Bold",
     fontSize: 13,
     color: "#000000",
+  },
+  authInputs: {
+    backgroundColor: "#FFFFFF",
+    marginTop: 8,
   },
 });
