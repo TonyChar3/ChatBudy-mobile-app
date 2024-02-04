@@ -45,6 +45,8 @@ export const VisitorCard = ({ visitor, navigation }) => {
               icon={faXmark}
               onPres={() => setShowFullName(false)}
               style={{ marginLeft: 16 }}
+              size={20}
+              color={"#A881D4"}
             />
           )}
           <Text
