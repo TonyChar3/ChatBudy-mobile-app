@@ -18,6 +18,7 @@ import {
 import { InboxNavigator } from "./inbox.navigator";
 import { SettingsScreenNavigator } from "./settings.navigator";
 import { VisitorScreen } from "../../features/visitor/screen/visitor.screen";
+import { NotificationNavigator } from "./notification.navigator";
 import { NotificationScreen } from "../../features/notification/screen/notification.screen";
 
 const Tab = createBottomTabNavigator();
@@ -59,7 +60,7 @@ export const AppNavigator = () => {
         />
         <Tab.Screen
           name="Notification"
-          component={NotificationScreen}
+          component={NotificationNavigator}
           options={{ headerShown: false, tabBarShowLabel: false }}
         />
         <Tab.Screen
