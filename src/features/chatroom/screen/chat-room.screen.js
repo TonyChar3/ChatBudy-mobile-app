@@ -23,7 +23,7 @@ import {
   ChatRoomChatContainer,
   ChatRoomBackground,
   ChatContainer,
-} from "../components/inbox-chat.style";
+} from "../components/chatroom.style";
 
 import { EmptyVisitorMessageContainer } from "../../visitor/components/visitor-page.style";
 
@@ -58,7 +58,7 @@ export const ChatRoomScreen = ({ navigation, visitor_id }) => {
       <SafeArea currentRoute={routeName}>
         <ChatRoomScreenContainer>
           <ChatRoomNameContainer>
-            <TouchableOpacity onPress={() => navigation.navigate("Inbox")}>
+            <TouchableOpacity onPress={() => navigation.navigate("Visitor")}>
               <FontAwesomeIcon
                 icon={faChevronLeft}
                 size={25}

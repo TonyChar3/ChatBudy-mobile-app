@@ -89,7 +89,12 @@ export const VisitorCard = ({ visitor, navigation }) => {
                 size={25}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate("Inbox")}>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate("ChatRoom");
+                setOpenActions(false);
+              }}
+            >
               <FontAwesomeIcon
                 icon={faComment}
                 style={styles.Icons}

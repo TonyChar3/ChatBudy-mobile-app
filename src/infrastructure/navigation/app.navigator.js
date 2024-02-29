@@ -1,31 +1,33 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { DisconnectButton } from "../../components/utility/disconnect-button.component";
 
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
-  faInbox as faInboxRegular,
   faPeople as faPeopleRegular,
   faBell as faBellRegular,
   faGears as faGearsRegular,
+  faRightFromBracket as faRightFromBracketRegular,
 } from "@fortawesome/pro-regular-svg-icons";
 import {
-  faInbox as faInboxSolid,
   faPeople as faPeopleSolid,
   faBell as faBellSolid,
   faGears as faGearsSolid,
+  faRightFromBracket as faRightFromBracketSolid,
 } from "@fortawesome/pro-solid-svg-icons";
 
-import { InboxNavigator } from "./inbox.navigator";
 import { SettingsScreenNavigator } from "./settings.navigator";
-import { VisitorScreen } from "../../features/visitor/screen/visitor.screen";
+import { VisitorNavigator } from "./visitor.navigator";
 import { NotificationNavigator } from "./notification.navigator";
-import { NotificationScreen } from "../../features/notification/screen/notification.screen";
 
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
   Visitor: { active: faPeopleSolid, inactive: faPeopleRegular },
-  Inbox: { active: faInboxSolid, inactive: faInboxRegular },
+  Disconnect: {
+    active: faRightFromBracketSolid,
+    inactive: faRightFromBracketRegular,
+  },
   Notification: { active: faBellSolid, inactive: faBellRegular },
   Settings: { active: faGearsSolid, inactive: faGearsRegular },
 };
@@ -35,7 +37,8 @@ const createScreenOptions = ({ route }) => ({
     const iconName = focused
       ? TAB_ICON[route.name].active
       : TAB_ICON[route.name].inactive;
-    return <FontAwesomeIcon icon={iconName} size={size} color={color} />;
+    const iconSize = route.name === "Notification" ? 30 : 28;
+    return <FontAwesomeIcon icon={iconName} size={iconSize} color={color} />;
   },
   tabBarStyle: {
     borderTopWidth: 0,
@@ -50,12 +53,7 @@ export const AppNavigator = () => {
       <Tab.Navigator screenOptions={createScreenOptions}>
         <Tab.Screen
           name="Visitor"
-          component={VisitorScreen}
-          options={{ headerShown: false, tabBarShowLabel: false }}
-        />
-        <Tab.Screen
-          name="Inbox"
-          component={InboxNavigator}
+          component={VisitorNavigator}
           options={{ headerShown: false, tabBarShowLabel: false }}
         />
         <Tab.Screen
