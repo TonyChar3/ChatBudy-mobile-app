@@ -9,7 +9,6 @@ export const ChatRoomBackground = styled(ImageBackground).attrs({
     uri: "https://ik.imagekit.io/bqofr3ncj/tr:w-800/ChatBudy.io_2024-01-10_15_24/Increase_Your_Sales_10_ixotpm.png?updatedAt=1704919570913",
   },
 })`
-  position: absolute;
   width: 100%;
   height: 100%;
 `;

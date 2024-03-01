@@ -1,19 +1,16 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { DisconnectButton } from "../../components/utility/disconnect-button.component";
 
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
   faPeople as faPeopleRegular,
   faBell as faBellRegular,
   faGears as faGearsRegular,
-  faRightFromBracket as faRightFromBracketRegular,
 } from "@fortawesome/pro-regular-svg-icons";
 import {
   faPeople as faPeopleSolid,
   faBell as faBellSolid,
   faGears as faGearsSolid,
-  faRightFromBracket as faRightFromBracketSolid,
 } from "@fortawesome/pro-solid-svg-icons";
 
 import { SettingsScreenNavigator } from "./settings.navigator";
@@ -24,10 +21,6 @@ const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
   Visitor: { active: faPeopleSolid, inactive: faPeopleRegular },
-  Disconnect: {
-    active: faRightFromBracketSolid,
-    inactive: faRightFromBracketRegular,
-  },
   Notification: { active: faBellSolid, inactive: faBellRegular },
   Settings: { active: faGearsSolid, inactive: faGearsRegular },
 };
@@ -37,7 +30,7 @@ const createScreenOptions = ({ route }) => ({
     const iconName = focused
       ? TAB_ICON[route.name].active
       : TAB_ICON[route.name].inactive;
-    const iconSize = route.name === "Notification" ? 30 : 28;
+    const iconSize = route.name === "Notification" ? 33 : 28;
     return <FontAwesomeIcon icon={iconName} size={iconSize} color={color} />;
   },
   tabBarStyle: {

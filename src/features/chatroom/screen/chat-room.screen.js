@@ -54,59 +54,69 @@ export const ChatRoomScreen = ({ navigation, visitor_id }) => {
   const routeName = route.name;
   return (
     <>
-      <ChatRoomBackground />
       <SafeArea currentRoute={routeName}>
-        <ChatRoomScreenContainer>
-          <ChatRoomNameContainer>
-            <TouchableOpacity onPress={() => navigation.navigate("Visitor")}>
-              <FontAwesomeIcon
-                icon={faChevronLeft}
-                size={25}
-                color={"#A881D4"}
-              />
-            </TouchableOpacity>
-            <Text style={styles.chatName}>Visitor Name</Text>
-          </ChatRoomNameContainer>
-          {Array.isArray(chat_array) ? (
-            chat_array.length ? (
-              <ChatRoomChatContainer>
-                <FlatList
-                  data={chat_array}
-                  renderItem={({ item }) => (
-                    <ChatContainer
-                      style={
-                        item.sender_type === "admin"
-                          ? styles.adminChat
-                          : styles.visitorChat
-                      }
-                    >
-                      <Text style={styles.chat}>{item.text}</Text>
-                    </ChatContainer>
-                  )}
+        <ChatRoomBackground>
+          <ChatRoomScreenContainer>
+            <ChatRoomNameContainer>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("VisitorScreen")}
+              >
+                <FontAwesomeIcon
+                  icon={faChevronLeft}
+                  size={25}
+                  color={"#A881D4"}
                 />
-              </ChatRoomChatContainer>
+              </TouchableOpacity>
+              <Text style={styles.chatName}>Visitor Name</Text>
+            </ChatRoomNameContainer>
+            {Array.isArray(chat_array) ? (
+              chat_array.length ? (
+                <ChatRoomChatContainer>
+                  <FlatList
+                    data={chat_array}
+                    renderItem={({ item }) => (
+                      <ChatContainer
+                        style={
+                          item.sender_type === "admin"
+                            ? styles.adminChat
+                            : styles.visitorChat
+                        }
+                      >
+                        <Text style={styles.chat}>{item.text}</Text>
+                      </ChatContainer>
+                    )}
+                  />
+                </ChatRoomChatContainer>
+              ) : (
+                <EmptyVisitorMessageContainer>
+                  <FontAwesomeIcon
+                    icon={faComment}
+                    size={60}
+                    color={"#E6E6E6"}
+                  />
+                </EmptyVisitorMessageContainer>
+              )
             ) : (
-              <EmptyVisitorMessageContainer>
-                <FontAwesomeIcon icon={faComment} size={60} color={"#E6E6E6"} />
-              </EmptyVisitorMessageContainer>
-            )
-          ) : (
-            <ActivityIndicator
-              color={"#A881D4"}
-              size={40}
-              style={styles.loading}
-            />
-          )}
-          <ChatRoomInputContainer>
-            <TextInput style={styles.chatInput} placeholder="send a chat..." />
-            <FontAwesomeIcon
-              icon={faPaperPlaneTop}
-              size={25}
-              color={"#FFFFFF"}
-              style={styles.sendIcon}
-            />
-          </ChatRoomInputContainer>
-        </ChatRoomScreenContainer>
+              <ActivityIndicator
+                color={"#A881D4"}
+                size={40}
+                style={styles.loading}
+              />
+            )}
+            <ChatRoomInputContainer>
+              <TextInput
+                style={styles.chatInput}
+                placeholder="send a chat..."
+              />
+              <FontAwesomeIcon
+                icon={faPaperPlaneTop}
+                size={25}
+                color={"#FFFFFF"}
+                style={styles.sendIcon}
+              />
+            </ChatRoomInputContainer>
+          </ChatRoomScreenContainer>
+        </ChatRoomBackground>
       </SafeArea>
     </>
   );

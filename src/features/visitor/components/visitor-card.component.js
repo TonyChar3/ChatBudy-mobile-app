@@ -91,7 +91,7 @@ export const VisitorCard = ({ visitor, navigation }) => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate("ChatRoom");
+                navigation.navigate("ChatRoomScreen");
                 setOpenActions(false);
               }}
             >

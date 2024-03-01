@@ -7,6 +7,5 @@ export const SafeArea = styled(SafeAreaView)`
   flex: 1;
   position: relative;
   margin-top: ${statusBarHeight}px;
-  background-color: ${(props) =>
-    props.currentRoute === "ChatRoom" ? "transparent" : "#FFFFFF"};
+  background-color: #ffffff;
 `;
