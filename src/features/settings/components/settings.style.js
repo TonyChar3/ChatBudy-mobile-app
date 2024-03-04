@@ -46,10 +46,6 @@ export const SettingsSectionDivider = styled.View`
 `;
 
 /**
- * Chatroom settings screen
- */
-
-/**
  * User profile screen
  */
 // Layout
@@ -167,6 +163,65 @@ export const ProfileInfoInput = styled(TextInput)`
   padding: 0px;
   margin: 8px;
 `;
+
+/**
+ * Customization Sections screen ( Chatroom & Widget )
+ */
+// Layout
+export const ReturnDrawerButtonWrapper = styled.View`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+export const ReturnDrawerButtonContainer = styled.View`
+  width: 57%;
+  margin: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const CustomizationSectionWrapper = styled.View`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const CustomizationSectionContainer = styled.View`
+  width: 90%;
+  height: 80%;
+  margin: 8px;
+  border-radius: 15px;
+  background-color: #c9c8c8;
+  opacity: 0.6;
+`;
+
+export const CustomizationSectionDrawer = styled.View`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #000000;
+`;
+
+// Button
+export const CustomDrawerButton = styled(TouchableOpacity)`
+  padding: 16px;
+  border: 2px solid;
+  border-radius: 100px;
+`;
+
+/**
+ * Chatroom settings screen
+ */
 
 /**
  * Widget settings screen
